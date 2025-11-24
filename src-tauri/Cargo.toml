@@ -15,25 +15,25 @@ name = "tauri_app_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]
-tauri-build = { version = "2", features = [] }
+tauri-build = { version = "2.5.2", features = [] }
 
 [dependencies]
-tauri = { version = "2", features = ["macos-private-api"] }
-tauri-plugin-opener = "2"
-serde = { version = "1", features = ["derive"] }
-serde_json = "1"
-tauri-plugin-clipboard-manager = "2"
-tauri-plugin-dialog = "2"
-tauri-plugin-fs = "2"
-tauri-plugin-log = "2"
-tauri-plugin-notification = "2"
-tauri-plugin-persisted-scope = "2"
-tauri-plugin-process = "2"
-log = "0.4"
-regex = "1.11.1"
+tauri = { version = "2.9.3", features = ["macos-private-api"] }
+tauri-plugin-opener = "2.5.2"
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = "1.0.145"
+tauri-plugin-clipboard-manager = "2.3.2"
+tauri-plugin-dialog = "2.4.2"
+tauri-plugin-fs = "2.4.4"
+tauri-plugin-log = "2.7.1"
+tauri-plugin-notification = "2.3.3"
+tauri-plugin-persisted-scope = "2.3.4"
+tauri-plugin-process = "2.3.1"
+log = "0.4.28"
+regex = "1.12.2"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
-tauri-plugin-updater = "2"
+tauri-plugin-updater = "2.9.0"
 
 # Optimize for smaller binary size in release builds
 [profile.release]

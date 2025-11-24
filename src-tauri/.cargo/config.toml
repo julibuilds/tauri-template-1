@@ -1,0 +1,26 @@
+[build]
+# Use sccache for all Rust compilation (requires: brew install sccache)
+rustc-wrapper = "sccache"
+
+# Parallel jobs optimized for MacBook Air M2 (8 cores)
+jobs = 8
+
+[profile.dev.package."*"]
+# Optimize dependencies even in dev mode for better runtime performance
+# Dependencies rarely change, so compile-time cost is minimal
+opt-level = 2
+codegen-units = 16
+
+# [target.aarch64-apple-darwin]
+# macOS ARM64 settings
+# Note: Using default Apple ld64 linker (most stable for macOS)
+# lld/ld64.lld has known stability issues on macOS as of 2025
+
+[net]
+# Faster git operations
+git-fetch-with-cli = true
+
+[term]
+# Better progress indicators
+progress.when = "auto"
+progress.width = 80
